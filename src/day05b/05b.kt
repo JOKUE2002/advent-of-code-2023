@@ -4,6 +4,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.runBlocking
+import skipFirst
+import skipLast
 import java.io.File
 import java.util.concurrent.atomic.AtomicLong
 
@@ -76,9 +78,6 @@ suspend fun main() {
 
     println("Min Location: ${finalLocation.get()}")
 }
-
-private fun List<String>.skipFirst(): List<String> = this.subList(1, this.size)
-private fun List<String>.skipLast(): List<String> = this.subList(0, this.size - 1)
 
 private fun String.toMapObject(): MapObject {
     val split = this.split(' ')

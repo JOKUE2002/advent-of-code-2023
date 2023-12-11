@@ -1,5 +1,7 @@
 package day05a
 
+import skipFirst
+import skipLast
 import java.io.File
 
 private data class MapObject (
@@ -49,9 +51,6 @@ fun main() {
 
     println("Min Location: ${location.min()}")
 }
-
-private fun List<String>.skipFirst(): List<String> = this.subList(1, this.size)
-private fun List<String>.skipLast(): List<String> = this.subList(0, this.size - 1)
 
 private fun String.toMapObject(): MapObject {
     val split = this.split(' ')
